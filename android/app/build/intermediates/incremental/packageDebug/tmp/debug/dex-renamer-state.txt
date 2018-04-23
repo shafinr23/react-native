@@ -1,0 +1,4 @@
+#Sun Apr 22 14:49:37 BDT 2018
+base.0=/home/shafin/rn_c/rn_course/android/app/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
