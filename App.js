@@ -50,7 +50,7 @@ export default class App extends React.Component {
         onPress={this.placeSubmiHandler}
         />
         </View>
-        <View>
+        <View style={styles.placeList} >
           {placesOutput}
         </View>
         
@@ -80,6 +80,9 @@ const styles = StyleSheet.create({
   },
   placeButton:{
     width:"30%",
-    
+  },
+  placeList:{
+    width:"100%"
   }
+  
 });
