@@ -16,7 +16,7 @@ const styles  = StyleSheet.create({
         width: "100%",
         padding: 10,
         backgroundColor: "red",
-        margin:2 
+        margin:5 
     }
 });
 
