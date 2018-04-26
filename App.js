@@ -4,12 +4,14 @@ import { StyleSheet, View } from "react-native";
 
 import PlaceInput from './src/components/PlaceInput/PlaceInput';
 import PlaceList from './src/components/PlaceList/PlaceList';
+import PlaceDetail from './src/components/PlaceDetail/PlaceDetail';
 
 
 
 export default class App extends Component {
   state = {
-    places: []
+    places: [],
+    selectPlace: null
   };
 
   placeAddedHandler = placeName => {
@@ -26,22 +28,30 @@ export default class App extends Component {
     });
   };
 
-  placeDeletedHandeler = key => {
+  placeSelectedHandeler = key => {
     this.setState(prevState =>{
-      return{
-        places: prevState.places.filter(place => {
-          return place.key !== key;
+      return {
+        selectPlace:prevState.places.find(place=>{
+          return place.key === key;
         })
-      };
+      }
     });
-  }
+    // this.setState(prevState =>{
+    //   return{
+    //     places: prevState.places.filter(place => {
+    //       return place.key !== key;
+    //     })
+    //   };
+    // });
+  };
 
   render() {
     return (
       <View style={styles.container}>
+        <PlaceDetail selectPlace={this.state.selectPlace} />
         <PlaceInput onPlaceAdded={this.placeAddedHandler} />
         <PlaceList places={this.state.places} 
-        onItemDeleted={this.placeDeletedHandeler} />
+        onItemSelected={this.placeSelectedHandeler} />
       </View>
     );
   }
