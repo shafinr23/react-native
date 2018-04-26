@@ -19,11 +19,22 @@ export default class App extends Component {
     });
   };
 
+  placeDeletedHandeler = index => {
+    this.setState(prevState =>{
+      return{
+        places: prevState.places.filter((place , i) => {
+          return i !== index;
+        })
+      };
+    });
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <PlaceInput onPlaceAdded={this.placeAddedHandler} />
-        <PlaceList places={this.state.places} />
+        <PlaceList places={this.state.places} 
+        onItemDeleted={this.placeDeletedHandeler} />
       </View>
     );
   }
@@ -32,7 +43,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding:10,
+    padding:10, 
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "flex-start"
