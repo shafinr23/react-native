@@ -13,8 +13,8 @@ const placeDetail = props => {
     }
     return (
         <Modal>
-        <View>
-            
+        <View style={styles.modalContener} >
+            {modalContent}
             <View>
                 <Button title="delete" color="red" />
                 <Button title="close"/>
@@ -26,7 +26,9 @@ const placeDetail = props => {
 };
 
 const styles = StyleSheet.create({
-
+    modalContener:{
+        margin: 22
+    }
 });
 
 export default placeDetail;
