@@ -28,6 +28,23 @@ export default class App extends Component {
     });
   };
 
+  placeDeletedHandeler = ()=>{
+  this.setState(prevState =>{
+      return{
+        places: prevState.places.filter(place => {
+          return place.key !== prevState.selectPlace.key;
+        }),
+        selectPlace:null
+      };
+    });
+  };
+
+  modalCloseHandeler = ()=>{
+    this.setState({
+      selectPlace:null
+    });
+  };
+
   placeSelectedHandeler = key => {
     this.setState(prevState =>{
       return {
@@ -36,19 +53,15 @@ export default class App extends Component {
         })
       }
     });
-    // this.setState(prevState =>{
-    //   return{
-    //     places: prevState.places.filter(place => {
-    //       return place.key !== key;
-    //     })
-    //   };
-    // });
+  
   };
 
   render() {
     return (
       <View style={styles.container}>
-        <PlaceDetail selectPlace={this.state.selectPlace} />
+        <PlaceDetail selectPlace={this.state.selectPlace} 
+        onItemDeleted={this.placeDeletedHandeler} 
+        onModalClose={this.modalCloseHandeler}/>
         <PlaceInput onPlaceAdded={this.placeAddedHandler} />
         <PlaceList places={this.state.places} 
         onItemSelected={this.placeSelectedHandeler} />
