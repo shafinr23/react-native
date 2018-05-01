@@ -7,7 +7,7 @@ import configureStore from './src/store/configureStore';
  
 const store = configureStore();
  
-const RNRedux = () =>(
+const RNRedux =()=>(
     <Provider store={store} >
         <App />
     </Provider>

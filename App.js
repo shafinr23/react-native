@@ -6,7 +6,10 @@ import { connect } from 'react-redux';
 import PlaceInput from './src/components/PlaceInput/PlaceInput';
 import PlaceList from './src/components/PlaceList/PlaceList';
 import PlaceDetail from './src/components/PlaceDetail/PlaceDetail';
-import {addPlace ,deletePlace , deselectPlace , selectPlace} from './src/store/actions/index'
+import {addPlace ,
+  deletePlace,
+   selectPlace,
+    deselectPlace} from './src/store/actions/index';
 
 
 
@@ -53,10 +56,15 @@ const styles = StyleSheet.create({
   }
 });
 
+
+
+
+
+
 const mapStateToProps = state =>{
   return {
     places: state.places.places,
-    selectPlace: state.places,selectPlace
+    selectPlace: state.places.selectPlace
   };
 };
 const mapDispatchToProps = dispatch =>{
