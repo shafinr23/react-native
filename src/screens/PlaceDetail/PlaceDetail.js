@@ -20,6 +20,7 @@ const placeDetail = props => {
         </View>
     
     );
+
     
 };
 
