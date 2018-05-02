@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed May 02 03:16:01 BDT 2018
+#Wed May 02 04:04:38 BDT 2018
 17.baseType=DIRECTORY
 4.path=lib/x86/libyoga.so
 25.base=/home/shafin/rn_c/rn_course/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
