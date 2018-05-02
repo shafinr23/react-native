@@ -34,7 +34,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 const startTabs = async () => {
     const mapIcon = await Icon.getImageSource("md-map", 30);
     const shareIcon = await Icon.getImageSource("ios-share-alt", 30);
- 
+    const menuIcon = await Icon.getImageSource("ios-menu", 30);
+
      Navigation.startTabBasedApp({
          tabs: [
              {
@@ -42,14 +43,32 @@ const startTabs = async () => {
                  title: "Find Place ",
                  icon: mapIcon,
              screen:"awesome-places.findPlacescreen",
-},
+             navigatorButtons:{
+                 leftButtons:{
+                     icon:menuIcon,
+                     title:"menu"
+                 }
+             }
+            },
              {
                  label: "Share Place",
                  title: "Share Place ",
                  icon: shareIcon,
                  screen:"awesome-places.SharePlacescreen",
+                 navigatorButtons:{
+                    leftButtons:{
+                        icon:menuIcon,
+                        title:"menu"
+                    }
+                }
+                 
              }
-         ]
+         ],
+         drawer:{
+             left:{
+                 screen:"awesome-places.SideDrawerScreen"
+             }
+         }
     });
 };
 
