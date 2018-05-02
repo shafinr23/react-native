@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import { View , Text } from 'react-native'; 
+import { View , Text ,Dimensions } from 'react-native'; 
 class SideDrawer extends Component{
     render(){
         return(
-            <View>
+            <View style={{width:Dimensions.get("window").width *6}} >
                 <Text>side drawer</Text>
             </View>
         );

@@ -34,7 +34,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 const startTabs = async () => {
     const mapIcon = await Icon.getImageSource("md-map", 30);
     const shareIcon = await Icon.getImageSource("ios-share-alt", 30);
-    const menuIcon = await Icon.getImageSource("ios-menu", 30);
+    const menuIcon = await Icon.getImageSource("md-map", 30);
 
      Navigation.startTabBasedApp({
          tabs: [
@@ -46,7 +46,8 @@ const startTabs = async () => {
              navigatorButtons:{
                  leftButtons:{
                      icon:menuIcon,
-                     title:"menu"
+                     title:"menu",
+                     id:"sideDrawerToggle"
                  }
              }
             },
@@ -58,7 +59,8 @@ const startTabs = async () => {
                  navigatorButtons:{
                     leftButtons:{
                         icon:menuIcon,
-                        title:"menu"
+                        title:"menu left ",
+                        id:"sideDrawerToggle"
                     }
                 }
                  
