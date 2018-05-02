@@ -1,8 +1,8 @@
-import {ADD_PLACE , DELETE_PLACE , DESELECT_PLACE , SELECT_PLACE} from '../actions/actionTypes';
+import {ADD_PLACE , DELETE_PLACE } from '../actions/actionTypes';
 
 const initialState ={
     places: [],
-    selectPlace: null
+    // selectPlace: null
 };
 
 const reducer = (state = initialState, action)=>{
@@ -24,20 +24,9 @@ const reducer = (state = initialState, action)=>{
                 places: state.places.filter(place => {
                     return place.key !== state.selectPlace.key;
                   }),
-                  selectPlace:null
+                //   selectPlace:null
             };
-        case SELECT_PLACE:
-            return{
-                ...state,
-                selectPlace:state.places.find(place =>{
-                    return place.key === action.placeKey;
-                  })
-            };
-        case DESELECT_PLACE:
-            return{
-                ...state,
-                    selectPlace:null           
-                 };
+
         default:
             return state;
     }
