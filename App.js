@@ -12,10 +12,22 @@ import configureStore from './src/store/configureStore';
 const store = configureStore();
 // register scrren 
 
-Navigation.registerComponent("awesome-places.AuthScreen",()=> AuthScreen , store , Provider );
-Navigation.registerComponent("awesome-places.SharePlacescreen",()=> SharePlacescreen, store , Provider);
-Navigation.registerComponent("awesome-places.findPlacescreen",()=> findPlacescreen, store , Provider);
-Navigation.registerComponent("awesome-places.PlaceDetailScreen",()=> PlaceDetailScreen);
+Navigation.registerComponent("awesome-places.AuthScreen",
+()=> AuthScreen , 
+store , 
+Provider );
+Navigation.registerComponent("awesome-places.SharePlacescreen",
+()=> SharePlacescreen, 
+store ,
+ Provider);
+Navigation.registerComponent("awesome-places.findPlacescreen",
+()=> findPlacescreen,
+ store , 
+ Provider);
+Navigation.registerComponent("awesome-places.PlaceDetailScreen",
+()=> PlaceDetailScreen,
+store , 
+Provider);
 
 
 

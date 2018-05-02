@@ -2,7 +2,7 @@ import {ADD_PLACE , DELETE_PLACE } from '../actions/actionTypes';
 
 const initialState ={
     places: [],
-    // selectPlace: null
+    // selectedPlace: null
 };
 
 const reducer = (state = initialState, action)=>{
@@ -22,9 +22,9 @@ const reducer = (state = initialState, action)=>{
             return{
                 ...state,
                 places: state.places.filter(place => {
-                    return place.key !== state.selectPlace.key;
+                    return place.key !== action.placeKey;
                   }),
-                //   selectPlace:null
+                //   selectedPlace:null
             };
 
         default:

@@ -7,14 +7,15 @@ export const addPlace = (placeName)=>{
     };
 };
 
-export const deletePlace = ()=>{
+export const deletePlace = (key)=>{
     return{
-        type: DELETE_PLACE
+        type: DELETE_PLACE,
+        placeKey:key
 
     };
 };
 
-// export const selectPlace = (key)=>{
+// export const selectedPlace = (key)=>{
 //     return{
 //         type: SELECT_PLACE,
 //         placeKey:key
@@ -22,7 +23,7 @@ export const deletePlace = ()=>{
 //     };
 // };
 
-// export const deselectPlace = ()=>{
+// export const deselectedPlace = ()=>{
 //     return{
 //         type:DESELECT_PLACE
 //     };
