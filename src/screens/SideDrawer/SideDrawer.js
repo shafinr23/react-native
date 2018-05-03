@@ -1,20 +1,27 @@
-import React, {Component} from 'react';
-import { View , Text ,Dimensions } from 'react-native'; 
-class SideDrawer extends Component{
-    constructor(props) {
+import React, { Component } from "react";
+import { View, Text, Dimensions, StyleSheet } from "react-native";
 
-        super(props);
-        
-        this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
-        }
-    render(){
-        return(
-            <View style={{width:Dimensions.get("window").width *0.6}} >
-                <Text>side drawer</Text>
-            </View>
-        );
-    }
+class SideDrawer extends Component {
+  render() {
+    return (
+      <View
+        style={[
+          styles.container,
+          { width: Dimensions.get("window").width * 0.8 }
+        ]}
+      >
+        <Text>SideDrawer</Text>
+      </View>
+    );
+  }
 }
 
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: 22,
+    backgroundColor: "white",
+    flex: 1
+  }
+});
 
-export default SideDrawer ;
+export default SideDrawer;
