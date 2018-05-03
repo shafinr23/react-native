@@ -1,6 +1,8 @@
 import React,{ Component } from 'react';
 import {View , Text ,Button , TextInput , StyleSheet} from 'react-native';
 import startMainTabs from '../MainTabs/startMainTabs';
+import DefaultInput from '../../components/UI/DeafultInput/DefaultInput';
+import HeadingText from '../../components/UI/HeadingText/HeadingText'
 class AuthScreen extends Component{
     loginHandeler = ()=>{
         startMainTabs();
@@ -8,13 +10,13 @@ class AuthScreen extends Component{
     render(){
         return(
             <View style={styles.container} >
-                <Text>please login </Text>
+                <HeadingText >please login</HeadingText>
 
                 <Button title="switch to login"/>
                 <View style={styles.inputContainer} >
-                    <TextInput style={styles.input} placeholder="your email address" underlineColorAndroid="transparent" />
-                    <TextInput style={styles.input} placeholder="your password" underlineColorAndroid="transparent"/>
-                    <TextInput style={styles.input} placeholder="confirm password" underlineColorAndroid="transparent" />
+                    <DefaultInput  placeholder="your email address" style={styles.input} />
+                    <DefaultInput  placeholder="your password" style={[styles.input,{borderColor:"red"}]} />
+                    <DefaultInput  placeholder="confirm password" style={styles.input} />
                 </View>
                 <Button title="login" onPress={this.loginHandeler}/>
             </View>
@@ -32,11 +34,9 @@ const styles =StyleSheet.create({
             width:"80%"
         },
         input:{
-            width:"100%",
-            borderWidth:1,
-            borderColor:"#000",
-            padding:5,
-            margin:8
+            backgroundColor:"#eee",
+            borderColor:"#bbb"
+            
         }
 });
 
