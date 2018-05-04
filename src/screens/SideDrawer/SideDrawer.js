@@ -11,6 +11,8 @@ class SideDrawer extends Component {
         ]}
       >
         <Text>SideDrawer</Text>
+        <Text>SideDrawer</Text>
+        <Text>SideDrawer</Text>
       </View>
     );
   }
