@@ -104,6 +104,9 @@ const startTabs = () => {
                     label: "Share Place",
                     title: "Share Place",
                     icon: sources[1],
+                    navigatorStyle: {
+                        navBarButtonColor: 'orange'
+                    },
                     navigatorButtons: {
                         leftButtons: [
                             {
@@ -115,6 +118,13 @@ const startTabs = () => {
                     }
                 }
             ],
+            tabsStyle: { 
+                tabBarSelectedButtonColor: "blue"
+              },
+              appStyle:{
+                tabBarSelectedButtonColor: "orange",
+                hideBackButtonTitle: true
+              },
             drawer: {
                 left: {
                     screen: "awesome-places.SideDrawerScreen"
