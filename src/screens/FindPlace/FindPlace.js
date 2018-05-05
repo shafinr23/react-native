@@ -18,7 +18,7 @@ class FindPlaceScreen extends Component {
   state = {
     placesLoaded: false,
     removeAnim: new Animated.Value(1),
-    placesAnim:new Animated.Value(0)
+    placesAnim: new Animated.Value(0)
   };
 
   constructor(props) {
@@ -37,13 +37,12 @@ class FindPlaceScreen extends Component {
   };
 
   placesLoadedHandler = () => {
-    Animated.timing(this.state.placesAnim,{
-      toValue:1,
-      duration:500,
-      useNativeDriver:true
+    Animated.timing(this.state.placesAnim, {
+      toValue: 1,
+      duration: 500,
+      useNativeDriver: true
     }).start();
-    
-    }
+  };
 
   placesSearchHandler = () => {
     Animated.timing(this.state.removeAnim, {
@@ -77,14 +76,15 @@ class FindPlaceScreen extends Component {
         style={{
           opacity: this.state.removeAnim,
           transform: [
-            { 
+            {
               scale: this.state.removeAnim.interpolate({
                 inputRange: [0, 1],
                 outputRange: [12, 1]
               })
             }
           ]
-        }}>
+        }}
+      >
         <TouchableOpacity onPress={this.placesSearchHandler}>
           <View style={styles.searchButton}>
             <Text style={styles.searchButtonText}>Find Places</Text>
@@ -94,13 +94,15 @@ class FindPlaceScreen extends Component {
     );
     if (this.state.placesLoaded) {
       content = (
-        <Animated.View style={{
-          opacity:this.state.placesAnim
-        }} >
-        <PlaceList
-          places={this.props.places}
-          onItemSelected={this.itemSelectedHandler}
-        />
+        <Animated.View
+          style={{
+            opacity: this.state.placesAnim
+          }}
+        >
+          <PlaceList
+            places={this.props.places}
+            onItemSelected={this.itemSelectedHandler}
+          />
         </Animated.View>
       );
     }
