@@ -21,7 +21,7 @@ import ButtonWithBackground from "../../components/UI/ButtonWithBackground/Butto
 import backgroundImage from "../../assets/background.jpg";
 import validate from "../../utility/validation";
 import { tryAuth } from "../../store/actions/index";
-
+ 
 class AuthScreen extends Component {
   state = {
     viewMode: Dimensions.get("window").height > 500 ? "portrait" : "landscape",
