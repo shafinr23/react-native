@@ -1,6 +1,13 @@
 import React, { Component } from "react";
-import { View, Text, Dimensions, StyleSheet ,TouchableOpacity , Platform } from "react-native";
-import Icon from 'react-native-vector-icons/Ionicons';
+import {
+  View,
+  Text,
+  Dimensions,
+  StyleSheet,
+  TouchableOpacity,
+  Platform
+} from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
 
 class SideDrawer extends Component {
   render() {
@@ -11,18 +18,17 @@ class SideDrawer extends Component {
           { width: Dimensions.get("window").width * 0.8 }
         ]}
       >
-      <TouchableOpacity>
-        <View style={styles.drawerItem } >
-          <Icon style={styles.drawerItemIcon}  name={ Platform.OS === 'android' ? "md-log-out":"ios-log-out"} size={30} color="#bbb" />
-        <Text>Sing out</Text>
-        </View>
-      </TouchableOpacity>
-        
-      <TouchableOpacity>
-        <View >
-        <Text>more option</Text>
-        </View>
-      </TouchableOpacity>
+        <TouchableOpacity>
+          <View style={styles.drawerItem}>
+            <Icon
+              name={Platform.OS === "android" ? "md-log-out" : "ios-log-out"}
+              size={30}
+              color="#aaa"
+              style={styles.drawerItemIcon}
+            />
+            <Text>Sign Out</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -30,19 +36,18 @@ class SideDrawer extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 52,
+    paddingTop: 50,
     backgroundColor: "white",
     flex: 1
   },
-  drawerItem:{
-    flexDirection:"row",
-    alignItems:"center",
-    padding:10,
-    backgroundColor:"#eee"
-  },  
-  drawerItemIcon:{
-marginRight:10,
-marginLeft:5
+  drawerItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 10,
+    backgroundColor: "#eee"
+  },
+  drawerItemIcon: {
+    marginRight: 10
   }
 });
 
